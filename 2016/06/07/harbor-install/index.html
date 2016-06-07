@@ -68,7 +68,7 @@
 <link href="/css/main.css?v=5.0.1" rel="stylesheet" type="text/css" />
 
 
-  <meta name="keywords" content="Hexo, NexT" />
+  <meta name="keywords" content="docker,harbor," />
 
 
 
@@ -91,7 +91,7 @@
 <meta property="og:site_name" content="zzhifeng">
 <meta property="og:description">
 <meta property="og:image" content="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png">
-<meta property="og:updated_time" content="2016-06-07T06:32:11.697Z">
+<meta property="og:updated_time" content="2016-06-07T09:57:45.818Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="harbor-install">
 <meta name="twitter:description">
@@ -296,6 +296,30 @@
 
       
         <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png" alt="Harbor"><br><a id="more"></a></p>
+<blockquote>
+<h4 id="habor-192-125-138-213"><a href="#habor-192-125-138-213" class="headerlink" title="habor  192.125.138.213"></a>habor  192.125.138.213</h4></blockquote>
+<p>装habor, vmware做的   go写的   vmware中国团队做的，在github上面直接提中文.<br>对接docker官方api的</p>
+<p>habor是调用api来管镜像的</p>
+<blockquote>
+<h4 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose</span></span><br><span class="line"><span class="comment"># chmod 755 /usr/local/bin/docker-compose</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
+<h4 id="安装Harbor"><a href="#安装Harbor" class="headerlink" title="安装Harbor"></a>安装Harbor</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># git clone https://github.com/vmware/harbor</span></span><br><span class="line"><span class="comment"># cd habor/Deploy</span></span><br><span class="line"><span class="comment"># ./prepare</span></span><br><span class="line"><span class="comment"># docker-compose up -d</span></span><br></pre></td></tr></table></figure>
+<h4 id="查看安装状态"><a href="#查看安装状态" class="headerlink" title="查看安装状态"></a>查看安装状态</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker-compose ps</span></span><br><span class="line">      Name                     Command               State                    Ports</span><br><span class="line">-----------------------------------------------------------------------------------------------------</span><br><span class="line">deploy_<span class="built_in">log</span>_1        /bin/sh -c cron &amp;&amp; rsyslogd -n   Up      0.0.0.0:1514-&gt;514/tcp</span><br><span class="line">deploy_mysql_1      docker-entrypoint.sh mysqld      Up      3306/tcp</span><br><span class="line">deploy_proxy_1      nginx -g daemon off;             Up      0.0.0.0:443-&gt;443/tcp, 0.0.0.0:80-&gt;80/tcp</span><br><span class="line">deploy_registry_1   /bin/registry serve /etc/r ...   Up      5000/tcp, 0.0.0.0:5001-&gt;5001/tcp</span><br><span class="line">deploy_ui_1         /go/bin/harbor_ui                Up      80/tcp</span><br></pre></td></tr></table></figure>
+</blockquote>
+<p>如需重启所有组件，可以：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker-compose start</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<h4 id="访问Harbor"><a href="#访问Harbor" class="headerlink" title="访问Harbor"></a>访问Harbor</h4></blockquote>
+<p><a href="http://192.125.138.213/" target="_blank" rel="external">http://192.125.138.213/</a></p>
+<p>admin/Harbor12345</p>
+<p>创建一个用户，设置用户密码，并将用户设置为library的Project Admin权限.</p>
+<blockquote>
+<h4 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h4></blockquote>
+<p>参考地址: <a href="https://github.com/vmware/harbor/blob/master/docs/user_guide.md" target="_blank" rel="external">https://github.com/vmware/harbor/blob/master/docs/user_guide.md</a></p>
+<p>推送镜像到仓库.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker login 192.125.138.213</span></span><br><span class="line"><span class="comment"># docker login -u zzhifeng -p noPassw0rd 192.125.138.213</span></span><br><span class="line"><span class="comment"># docker pull nginx    // 从docker官网下载一个测试镜像</span></span><br><span class="line"><span class="comment"># docker tag nginx:latest 192.125.138.213/library/nginx:latest</span></span><br><span class="line"><span class="comment"># docker push 192.125.138.213/library/nginx:latest</span></span><br></pre></td></tr></table></figure></p>
+<p>把机器上所有本地的镜像上传上去<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker tag jenkins:latest 192.125.138.213/library/jenkins:latest</span></span><br><span class="line"><span class="comment"># docker tag gitlab/gitlab-ce:latest 192.125.138.213/library/gitlab-ce:latest</span></span><br><span class="line"><span class="comment"># docker tag oddrationale/docker-shadowsocks:latest 192.125.138.213/library/docker-shadowsocks:latest</span></span><br><span class="line"><span class="comment"># docer push 192.125.138.213/library/jenkins:latest</span></span><br><span class="line"><span class="comment"># docer push 192.125.138.213/library/gitlab-ce:latest</span></span><br><span class="line"><span class="comment"># docer push 192.125.138.213/library/docker-shadowsocks:latest</span></span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<h4 id="下载镜像测试"><a href="#下载镜像测试" class="headerlink" title="下载镜像测试"></a>下载镜像测试</h4></blockquote>
+<p>从其它机器上下载, 如CentOS7.</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /etc/hosts    // 添加host记录先</span></span><br><span class="line">  192.125.138.213 reg.mydomain.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /lib/systemd/system/docker.service</span></span><br><span class="line">[Service]</span><br><span class="line">Type=notify</span><br><span class="line">ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:2375 --insecure-registry 0.0.0.0/0</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker login 192.125.138.213</span></span><br><span class="line">Username: zzhifeng</span><br><span class="line">Password:</span><br><span class="line">Login Succeeded </span><br><span class="line"></span><br><span class="line"><span class="comment"># docker pull 192.125.138.213/library/nginx:latest</span></span><br><span class="line"><span class="comment"># docker pull 192.125.138.213/private/jenkins:latest</span></span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -314,6 +338,14 @@
     </div>
 
     <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/docker/" rel="tag">#docker</a>
+          
+            <a href="/tags/harbor/" rel="tag">#harbor</a>
+          
+        </div>
       
 
       
@@ -408,7 +440,7 @@
           
             <div class="site-state-item site-state-tags">
               <a href="/tags">
-                <span class="site-state-item-count">2</span>
+                <span class="site-state-item-count">4</span>
                 <span class="site-state-item-name">标签</span>
               </a>
             </div>
@@ -437,7 +469,7 @@
               
             
             
-              <p class="post-toc-empty">此文章未包含目录</p>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#habor-192-125-138-213"><span class="nav-number">1.</span> <span class="nav-text">habor  192.125.138.213</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose安装"><span class="nav-number">2.</span> <span class="nav-text">docker-compose安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Harbor"><span class="nav-number">3.</span> <span class="nav-text">安装Harbor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看安装状态"><span class="nav-number">4.</span> <span class="nav-text">查看安装状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问Harbor"><span class="nav-number">5.</span> <span class="nav-text">访问Harbor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个项目"><span class="nav-number">6.</span> <span class="nav-text">创建一个项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载镜像测试"><span class="nav-number">7.</span> <span class="nav-text">下载镜像测试</span></a></li></ol></div>
             
           </div>
         </section>
