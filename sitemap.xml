@@ -2,9 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://zzhifeng.github.io/2016/06/07/hello-world/</loc>
+    <loc>http://zzhifeng.github.io/2016/06/01/hexo-github-blog/</loc>
     
-    <lastmod>2016-06-07T04:53:44.683Z</lastmod>
+    <lastmod>2016-06-07T05:54:53.913Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zzhifeng.github.io/2016/06/06/docker-ci-cd/</loc>
+    
+    <lastmod>2016-06-07T05:54:09.146Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zzhifeng.github.io/2016/06/07/habor-install/</loc>
+    
+    <lastmod>2016-06-07T05:51:31.664Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://zzhifeng.github.io/2016/04/03/hello-world/</loc>
+    
+    <lastmod>2016-06-07T05:50:21.228Z</lastmod>
     
   </url>
   
