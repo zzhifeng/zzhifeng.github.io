@@ -84,17 +84,23 @@
 
 
 
-<meta name="description">
+<meta name="description" content="habor介绍
+环境: 192.125.138.213  CentOS 7.2, docker 1.11.1
+Harbor项目是帮助用户迅速搭建一个企业级的registry 服务。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="harbor-install">
+<meta property="og:title" content="Docker部署私有仓库harbor">
 <meta property="og:url" content="http://zzhifeng.github.io/2016/06/07/harbor-install/index.html">
 <meta property="og:site_name" content="zzhifeng">
-<meta property="og:description">
+<meta property="og:description" content="habor介绍
+环境: 192.125.138.213  CentOS 7.2, docker 1.11.1
+Harbor项目是帮助用户迅速搭建一个企业级的registry 服务。">
 <meta property="og:image" content="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png">
-<meta property="og:updated_time" content="2016-06-07T09:57:45.818Z">
+<meta property="og:updated_time" content="2016-06-07T10:16:36.650Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="harbor-install">
-<meta name="twitter:description">
+<meta name="twitter:title" content="Docker部署私有仓库harbor">
+<meta name="twitter:description" content="habor介绍
+环境: 192.125.138.213  CentOS 7.2, docker 1.11.1
+Harbor项目是帮助用户迅速搭建一个企业级的registry 服务。">
 <meta name="twitter:image" content="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png">
 
 
@@ -118,7 +124,7 @@
 
   <link rel="canonical" href="http://zzhifeng.github.io/2016/06/07/harbor-install/"/>
 
-  <title> harbor-install | zzhifeng </title>
+  <title> Docker部署私有仓库harbor | zzhifeng </title>
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
@@ -248,7 +254,7 @@
             
             
               
-                harbor-install
+                Docker部署私有仓库harbor
               
             
           </h1>
@@ -295,16 +301,20 @@
       
 
       
-        <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png" alt="Harbor"><br><a id="more"></a></p>
+        <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png" alt="Harbor"></p>
 <blockquote>
-<h4 id="habor-192-125-138-213"><a href="#habor-192-125-138-213" class="headerlink" title="habor  192.125.138.213"></a>habor  192.125.138.213</h4></blockquote>
-<p>装habor, vmware做的   go写的   vmware中国团队做的，在github上面直接提中文.<br>对接docker官方api的</p>
-<p>habor是调用api来管镜像的</p>
+<h4 id="habor介绍"><a href="#habor介绍" class="headerlink" title="habor介绍"></a>habor介绍</h4></blockquote>
+<p>环境: 192.125.138.213  CentOS 7.2, docker 1.11.1</p>
+<p>Harbor项目是帮助用户迅速搭建一个企业级的registry 服务。</p>
+<a id="more"></a>
+<p>VMware公司开源了企业级Registry项目Harbor，由VMware中国研发的团队负责开发。Harbor项目是帮助用户迅速搭建一个企业级的registry 服务。它以Docker公司开源的registry为基础，提供了管理UI, 基于角色的访问控制(Role Based Access Control)，AD/LDAP集成、以及审计日志(Audit logging) 等企业用户需求的功能，同时还原生支持中文。</p>
 <blockquote>
-<h4 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose</span></span><br><span class="line"><span class="comment"># chmod 755 /usr/local/bin/docker-compose</span></span><br><span class="line">`</span><br></pre></td></tr></table></figure>
-<h4 id="安装Harbor"><a href="#安装Harbor" class="headerlink" title="安装Harbor"></a>安装Harbor</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># git clone https://github.com/vmware/harbor</span></span><br><span class="line"><span class="comment"># cd habor/Deploy</span></span><br><span class="line"><span class="comment"># ./prepare</span></span><br><span class="line"><span class="comment"># docker-compose up -d</span></span><br></pre></td></tr></table></figure>
-<h4 id="查看安装状态"><a href="#查看安装状态" class="headerlink" title="查看安装状态"></a>查看安装状态</h4><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker-compose ps</span></span><br><span class="line">      Name                     Command               State                    Ports</span><br><span class="line">-----------------------------------------------------------------------------------------------------</span><br><span class="line">deploy_<span class="built_in">log</span>_1        /bin/sh -c cron &amp;&amp; rsyslogd -n   Up      0.0.0.0:1514-&gt;514/tcp</span><br><span class="line">deploy_mysql_1      docker-entrypoint.sh mysqld      Up      3306/tcp</span><br><span class="line">deploy_proxy_1      nginx -g daemon off;             Up      0.0.0.0:443-&gt;443/tcp, 0.0.0.0:80-&gt;80/tcp</span><br><span class="line">deploy_registry_1   /bin/registry serve /etc/r ...   Up      5000/tcp, 0.0.0.0:5001-&gt;5001/tcp</span><br><span class="line">deploy_ui_1         /go/bin/harbor_ui                Up      80/tcp</span><br></pre></td></tr></table></figure>
-</blockquote>
+<h4 id="docker-compose安装"><a href="#docker-compose安装" class="headerlink" title="docker-compose安装"></a>docker-compose安装</h4></blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"># curl -L https://github.com/docker/compose/releases/download/1.6.2/docker-compose-`uname -s`-`uname -m` &gt; /usr/local/bin/docker-compose</span><br><span class="line"># chmod 755 /usr/local/bin/docker-compose</span><br></pre></td></tr></table></figure>
+<blockquote>
+<h4 id="安装Harbor"><a href="#安装Harbor" class="headerlink" title="安装Harbor"></a>安装Harbor</h4></blockquote>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># git clone https://github.com/vmware/harbor</span></span><br><span class="line"><span class="comment"># cd habor/Deploy</span></span><br><span class="line"><span class="comment"># ./prepare</span></span><br><span class="line">    Generated configuration file: ./config/ui/env</span><br><span class="line">    Generated configuration file: ./config/ui/app.conf</span><br><span class="line">    Generated configuration file: ./config/registry/config.yml</span><br><span class="line">    Generated configuration file: ./config/db/env</span><br><span class="line">    The configuration files are ready, please use docker-compose to start the service.</span><br><span class="line">	</span><br><span class="line"><span class="comment"># docker-compose up -d</span></span><br><span class="line">    Starting harbor_<span class="built_in">log</span>_1</span><br><span class="line">    Starting harbor_mysql_1</span><br><span class="line">    Starting harbor_registry_1</span><br><span class="line">    Starting harbor_ui_1</span><br><span class="line">    Starting harbor_proxy_1</span><br></pre></td></tr></table></figure>
+<h4 id="查看安装状态"><a href="#查看安装状态" class="headerlink" title="查看安装状态"></a>查看安装状态</h4><figure class="highlight html"><table><tr><td class="code"><pre><span class="line"># docker-compose ps</span><br><span class="line">      Name                     Command               State                    Ports</span><br><span class="line">-----------------------------------------------------------------------------------------------------</span><br><span class="line">deploy_log_1        /bin/sh -c cron &amp;&amp; rsyslogd -n   Up      0.0.0.0:1514-&gt;514/tcp</span><br><span class="line">deploy_mysql_1      docker-entrypoint.sh mysqld      Up      3306/tcp</span><br><span class="line">deploy_proxy_1      nginx -g daemon off;             Up      0.0.0.0:443-&gt;443/tcp, 0.0.0.0:80-&gt;80/tcp</span><br><span class="line">deploy_registry_1   /bin/registry serve /etc/r ...   Up      5000/tcp, 0.0.0.0:5001-&gt;5001/tcp</span><br><span class="line">deploy_ui_1         /go/bin/harbor_ui                Up      80/tcp</span><br></pre></td></tr></table></figure>
 <p>如需重启所有组件，可以：<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker-compose start</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
 <h4 id="访问Harbor"><a href="#访问Harbor" class="headerlink" title="访问Harbor"></a>访问Harbor</h4></blockquote>
@@ -314,12 +324,18 @@
 <blockquote>
 <h4 id="创建一个项目"><a href="#创建一个项目" class="headerlink" title="创建一个项目"></a>创建一个项目</h4></blockquote>
 <p>参考地址: <a href="https://github.com/vmware/harbor/blob/master/docs/user_guide.md" target="_blank" rel="external">https://github.com/vmware/harbor/blob/master/docs/user_guide.md</a></p>
-<p>推送镜像到仓库.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker login 192.125.138.213</span></span><br><span class="line"><span class="comment"># docker login -u zzhifeng -p noPassw0rd 192.125.138.213</span></span><br><span class="line"><span class="comment"># docker pull nginx    // 从docker官网下载一个测试镜像</span></span><br><span class="line"><span class="comment"># docker tag nginx:latest 192.125.138.213/library/nginx:latest</span></span><br><span class="line"><span class="comment"># docker push 192.125.138.213/library/nginx:latest</span></span><br></pre></td></tr></table></figure></p>
+<p>推送push镜像到仓库.<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker login 192.125.138.213</span></span><br><span class="line"><span class="comment"># docker login -u zzhifeng -p noPassw0rd 192.125.138.213</span></span><br><span class="line"><span class="comment"># docker pull nginx    // 从docker官网下载一个测试镜像</span></span><br><span class="line"><span class="comment"># docker tag nginx:latest 192.125.138.213/library/nginx:latest</span></span><br><span class="line"><span class="comment"># docker push 192.125.138.213/library/nginx:latest</span></span><br></pre></td></tr></table></figure></p>
 <p>把机器上所有本地的镜像上传上去<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker tag jenkins:latest 192.125.138.213/library/jenkins:latest</span></span><br><span class="line"><span class="comment"># docker tag gitlab/gitlab-ce:latest 192.125.138.213/library/gitlab-ce:latest</span></span><br><span class="line"><span class="comment"># docker tag oddrationale/docker-shadowsocks:latest 192.125.138.213/library/docker-shadowsocks:latest</span></span><br><span class="line"><span class="comment"># docer push 192.125.138.213/library/jenkins:latest</span></span><br><span class="line"><span class="comment"># docer push 192.125.138.213/library/gitlab-ce:latest</span></span><br><span class="line"><span class="comment"># docer push 192.125.138.213/library/docker-shadowsocks:latest</span></span><br></pre></td></tr></table></figure></p>
 <blockquote>
-<h4 id="下载镜像测试"><a href="#下载镜像测试" class="headerlink" title="下载镜像测试"></a>下载镜像测试</h4></blockquote>
+<h4 id="下载pull镜像测试"><a href="#下载pull镜像测试" class="headerlink" title="下载pull镜像测试"></a>下载pull镜像测试</h4></blockquote>
 <p>从其它机器上下载, 如CentOS7.</p>
 <figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># vim /etc/hosts    // 添加host记录先</span></span><br><span class="line">  192.125.138.213 reg.mydomain.com</span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /lib/systemd/system/docker.service</span></span><br><span class="line">[Service]</span><br><span class="line">Type=notify</span><br><span class="line">ExecStart=/usr/bin/docker daemon -H fd:// -H tcp://0.0.0.0:2375 --insecure-registry 0.0.0.0/0</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker login 192.125.138.213</span></span><br><span class="line">Username: zzhifeng</span><br><span class="line">Password:</span><br><span class="line">Login Succeeded </span><br><span class="line"></span><br><span class="line"><span class="comment"># docker pull 192.125.138.213/library/nginx:latest</span></span><br><span class="line"><span class="comment"># docker pull 192.125.138.213/private/jenkins:latest</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<h4 id="其它"><a href="#其它" class="headerlink" title="其它"></a>其它</h4></blockquote>
+<p>Harbor使用自端存储</p>
+<p><a href="https://github.com/vmware/harbor/blob/master/docs/installation_guide.md" target="_blank" rel="external">https://github.com/vmware/harbor/blob/master/docs/installation_guide.md</a></p>
+<p>By default, Harbor stores images on your local filesystem. In a production environment, you may consider using other storage backend instead of the local filesystem, like S3, Openstack Swift, Ceph, etc. What you need to update is the section of storage in the file Deploy/templates/registry/config.yml. For example, if you use Openstack Swift as your storage backend, the section may look like this:</p>
+<figure class="highlight bash"><table><tr><td class="code"><pre><span class="line">storage:</span><br><span class="line">  swift:</span><br><span class="line">    username: admin</span><br><span class="line">    password: ADMIN_PASS</span><br><span class="line">    authurl: http://keystone_addr:35357/v3</span><br><span class="line">    tenant: admin</span><br><span class="line">    domain: default</span><br><span class="line">    region: regionOne</span><br><span class="line">    container: docker_images</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -385,7 +401,7 @@
   <div class="comments" id="comments">
     
       <div class="ds-thread" data-thread-key="2016/06/07/harbor-install/"
-           data-title="harbor-install" data-url="http://zzhifeng.github.io/2016/06/07/harbor-install/">
+           data-title="Docker部署私有仓库harbor" data-url="http://zzhifeng.github.io/2016/06/07/harbor-install/">
       </div>
     
   </div>
@@ -469,7 +485,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#habor-192-125-138-213"><span class="nav-number">1.</span> <span class="nav-text">habor  192.125.138.213</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose安装"><span class="nav-number">2.</span> <span class="nav-text">docker-compose安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Harbor"><span class="nav-number">3.</span> <span class="nav-text">安装Harbor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看安装状态"><span class="nav-number">4.</span> <span class="nav-text">查看安装状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问Harbor"><span class="nav-number">5.</span> <span class="nav-text">访问Harbor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个项目"><span class="nav-number">6.</span> <span class="nav-text">创建一个项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载镜像测试"><span class="nav-number">7.</span> <span class="nav-text">下载镜像测试</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#habor介绍"><span class="nav-number">1.</span> <span class="nav-text">habor介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker-compose安装"><span class="nav-number">2.</span> <span class="nav-text">docker-compose安装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Harbor"><span class="nav-number">3.</span> <span class="nav-text">安装Harbor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#查看安装状态"><span class="nav-number">4.</span> <span class="nav-text">查看安装状态</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#访问Harbor"><span class="nav-number">5.</span> <span class="nav-text">访问Harbor</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#创建一个项目"><span class="nav-number">6.</span> <span class="nav-text">创建一个项目</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#下载pull镜像测试"><span class="nav-number">7.</span> <span class="nav-text">下载pull镜像测试</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#其它"><span class="nav-number">8.</span> <span class="nav-text">其它</span></a></li></ol></div>
             
           </div>
         </section>
