@@ -85,6 +85,7 @@
 
 
 <meta name="description" content="实验原理
+
 从本地git上提交代码, 然后使用maven做build成war包, 再把代码打包成镜像，再传到私有仓库(我这里是用Habor搭的)，触发远程机器执行docker pull, docker run. 
 
 优点: 代码开发, 测试, 部署 更快, docker image做到了一致性的保障">
@@ -93,16 +94,20 @@
 <meta property="og:url" content="http://zzhifeng.github.io/2016/06/06/docker-ci-cd/index.html">
 <meta property="og:site_name" content="zzhifeng">
 <meta property="og:description" content="实验原理
+
 从本地git上提交代码, 然后使用maven做build成war包, 再把代码打包成镜像，再传到私有仓库(我这里是用Habor搭的)，触发远程机器执行docker pull, docker run. 
 
 优点: 代码开发, 测试, 部署 更快, docker image做到了一致性的保障">
-<meta property="og:updated_time" content="2016-06-07T05:59:02.399Z">
+<meta property="og:image" content="http://7xv3xy.com1.z0.glb.clouddn.com/jenkins-docker.jpg">
+<meta property="og:updated_time" content="2016-06-07T06:32:18.833Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Docker的持续化集成与部署">
 <meta name="twitter:description" content="实验原理
+
 从本地git上提交代码, 然后使用maven做build成war包, 再把代码打包成镜像，再传到私有仓库(我这里是用Habor搭的)，触发远程机器执行docker pull, docker run. 
 
 优点: 代码开发, 测试, 部署 更快, docker image做到了一致性的保障">
+<meta name="twitter:image" content="http://7xv3xy.com1.z0.glb.clouddn.com/jenkins-docker.jpg">
 
 
 
@@ -302,13 +307,18 @@
       
 
       
-        <h4 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h4><ul>
+        <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/jenkins-docker.jpg" alt="jenkins-docker"></p>
+<blockquote>
+<h4 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h4></blockquote>
+<ul>
 <li><p>从本地git上提交代码, 然后使用maven做build成war包, 再把代码打包成镜像，再传到<strong>私有仓库(我这里是用Habor搭的)</strong>，触发远程机器执行docker pull, docker run. </p>
 </li>
 <li><p>优点: 代码开发, 测试, 部署 更快, docker image做到了一致性的保障</p>
 </li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h2><blockquote>
+<a id="more"></a>
+<hr>
+<blockquote>
 <h4 id="安装gitlab"><a href="#安装gitlab" class="headerlink" title="安装gitlab"></a>安装gitlab</h4></blockquote>
 <p>环境及镜像地址<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Host: 192.111.141.242 内部ip: 10.0.2.69</span><br><span class="line"></span><br><span class="line">https://hub.docker.com/r/gitlab/gitlab-ce/</span><br><span class="line">http://docs.gitlab.com/omnibus/docker/</span><br></pre></td></tr></table></figure></p>
 <p>运行gitlab容器:<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># docker run -d \</span></span><br><span class="line">--hostname gitlab.example.com \</span><br><span class="line">-p 9443:443 -p 9080:80 -p 9022:22 \</span><br><span class="line">--name gitlab \</span><br><span class="line">-v /opt/gitlab/config:/etc/gitlab \</span><br><span class="line">-v /opt/gitlab/logs:/var/<span class="built_in">log</span>/gitlab \</span><br><span class="line">-v /opt/gitlab/data:/var/opt/gitlab \</span><br><span class="line">--restart always \</span><br><span class="line">192.125.138.213/library/gitlab-ce:latest</span><br></pre></td></tr></table></figure></p>
@@ -415,8 +425,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2016/06/07/habor-install/" rel="prev" title="habor-install">
-                habor-install <i class="fa fa-chevron-right"></i>
+              <a href="/2016/06/07/harbor-install/" rel="prev" title="harbor-install">
+                harbor-install <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -528,7 +538,7 @@
               
             
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实验原理"><span class="nav-number">1.</span> <span class="nav-text">实验原理</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#"><span class="nav-number"></span> <span class="nav-text"></span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#安装gitlab"><span class="nav-number">1.</span> <span class="nav-text">安装gitlab</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Jenkins"><span class="nav-number">2.</span> <span class="nav-text">安装Jenkins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Jenkins"><span class="nav-number">3.</span> <span class="nav-text">配置Jenkins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在jenkins中创建一个maven-job"><span class="nav-number">4.</span> <span class="nav-text">在jenkins中创建一个maven job</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试代码提交"><span class="nav-number">5.</span> <span class="nav-text">测试代码提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在jenkins中再建一个新的项目-作为发布使用"><span class="nav-number">6.</span> <span class="nav-text">在jenkins中再建一个新的项目, 作为发布使用.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附录-Kubernetes上的操作"><span class="nav-number">7.</span> <span class="nav-text">附录: Kubernetes上的操作</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#实验原理"><span class="nav-number">1.</span> <span class="nav-text">实验原理</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装gitlab"><span class="nav-number">2.</span> <span class="nav-text">安装gitlab</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#安装Jenkins"><span class="nav-number">3.</span> <span class="nav-text">安装Jenkins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#配置Jenkins"><span class="nav-number">4.</span> <span class="nav-text">配置Jenkins</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在jenkins中创建一个maven-job"><span class="nav-number">5.</span> <span class="nav-text">在jenkins中创建一个maven job</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#测试代码提交"><span class="nav-number">6.</span> <span class="nav-text">测试代码提交</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#在jenkins中再建一个新的项目-作为发布使用"><span class="nav-number">7.</span> <span class="nav-text">在jenkins中再建一个新的项目, 作为发布使用.</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#附录-Kubernetes上的操作"><span class="nav-number">8.</span> <span class="nav-text">附录: Kubernetes上的操作</span></a></li></ol></div>
             
           </div>
         </section>

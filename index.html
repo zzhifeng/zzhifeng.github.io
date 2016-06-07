@@ -248,8 +248,8 @@
             
               
                 
-                <a class="post-title-link" href="/2016/06/07/habor-install/" itemprop="url">
-                  habor-install
+                <a class="post-title-link" href="/2016/06/07/harbor-install/" itemprop="url">
+                  harbor-install
                 </a>
               
             
@@ -273,8 +273,8 @@
             
               <span class="post-comments-count">
                 &nbsp; | &nbsp;
-                <a href="/2016/06/07/habor-install/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/habor-install/" itemprop="commentsCount"></span>
+                <a href="/2016/06/07/harbor-install/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count ds-thread-count" data-thread-key="2016/06/07/harbor-install/" itemprop="commentsCount"></span>
                 </a>
               </span>
             
@@ -298,9 +298,12 @@
 
       
         
-          
-            
-          
+          <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/harbor.png" alt="Harbor"><br>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/07/harbor-install/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -398,13 +401,15 @@
 
       
         
-          <h4 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h4><ul>
+          <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/jenkins-docker.jpg" alt="jenkins-docker"></p>
+<blockquote>
+<h4 id="实验原理"><a href="#实验原理" class="headerlink" title="实验原理"></a>实验原理</h4></blockquote>
+<ul>
 <li><p>从本地git上提交代码, 然后使用maven做build成war包, 再把代码打包成镜像，再传到<strong>私有仓库(我这里是用Habor搭的)</strong>，触发远程机器执行docker pull, docker run. </p>
 </li>
 <li><p>优点: 代码开发, 测试, 部署 更快, docker image做到了一致性的保障</p>
 </li>
 </ul>
-<h2 id=""><a href="#" class="headerlink" title=""></a>
           <div class="post-more-link text-center">
             <a class="btn" href="/2016/06/06/docker-ci-cd/#more" rel="contents">
               阅读全文 &raquo;
@@ -507,68 +512,17 @@
 
       
         
-          
-            <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/github_hexo.png" alt="github+hexo"></p>
-<h1 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h1><h4 id="喜欢写Blog的人，会经历三个阶段"><a href="#喜欢写Blog的人，会经历三个阶段" class="headerlink" title="喜欢写Blog的人，会经历三个阶段"></a>喜欢写Blog的人，会经历三个阶段</h4><ul>
+          <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/github_hexo.png" alt="github+hexo"></p>
+<h4 id="喜欢写Blog的人，会经历三个阶段"><a href="#喜欢写Blog的人，会经历三个阶段" class="headerlink" title="喜欢写Blog的人，会经历三个阶段"></a>喜欢写Blog的人，会经历三个阶段</h4><ul>
 <li>第一阶段，刚接触Blog，觉得很新鲜，试着选择一个免费空间来写。</li>
 <li>第二阶段，发现免费空间限制太多，就自己购买域名和空间，搭建独立博客。</li>
 <li>第三阶段，觉得独立博客的管理太麻烦，最好在保留控制权的前提下，让别人来管，自己只负责写文章。</li>
 </ul>
-<h4 id="静态博客"><a href="#静态博客" class="headerlink" title="静态博客"></a>静态博客</h4><ul>
-<li><p>所谓静态博客，它是在写好文章后，在本地生成静态页面后再上传到服务器（Jekyll在Github Page上的例子有点特殊，后面会讲到），而不是像传统的Wordpress等基于动态语言、数据库博客那样在访问的时候从数据库读取数据动态生成页面。</p>
-</li>
-<li><p>静态博客最大的优点是速度快，对网站使用的空间要求也不高，想找一个不支持静态页面的空间也是挺难的，缺点嘛，功能没有Wordpress等传统博客那么强。静态博客的 静态主要体现在浏览者的角度，而不是写作者的角度，其最终的HTML文件，也是计算机生成的。静态博客与动态博客的差别就好像去超市里买一罐咖啡与去咖啡厅点一杯咖啡的差别。</p>
-</li>
-<li><p>实际上大部分博主写博客仅仅是个人性质的，文章数量不多，流量也不大，所以并不需要自己建站那么复杂。但如果注册公共博客，又会非常依赖服务提供商所提供的主题、功能和写作工具，缺少自由度。静态博客就可以很好的弥补两者的缺点。静态博客和传统博客最大的区别就在于写作与发布的过程有所不同。</p>
-</li>
-<li><p>静态博客首先会在本地进行离线写作，然后通过工具将离线本地作品转化为HTML网页发布到在线网站上<br>动态博客首先要建立网站（当然也可以注册一个公共博客服务），然后在线完成博客的编辑和发布<br>静态博客可以让博主更专注于写作，而不是花费很多精力在建站技术和写作工具上。</p>
-</li>
-</ul>
-<h4 id="了解Hexo"><a href="#了解Hexo" class="headerlink" title="了解Hexo"></a>了解Hexo</h4><ul>
-<li><p>Hexo 是一个快速、简洁且高效的博客框架。Hexo 使用 Markdown（或其他渲染引擎）解析文章，在几秒内，即可利用靓丽的主题生成静态网页。</p>
-</li>
-<li><p>hexo出自台湾大学生tommy351之手，是一个基于Node.js的静态博客程序，其编译上百篇文字只需要几秒。hexo生成的静态网页可以直接放到GitHub Pages，BAE，SAE等平台上。</p>
-</li>
-</ul>
-<h4 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h4><p>GitHub windows</p>
-<h4 id="安装Node-JS"><a href="#安装Node-JS" class="headerlink" title="安装Node.JS"></a>安装Node.JS</h4><p>下载地址: <a href="http://nodejs.org/" target="_blank" rel="external">Node.JS</a> </p>
-<p>安装完后添加Path环境变量，使用npm命令生效, 新版会自动配置Path<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># npm -v</span></span><br><span class="line">  2.15.5</span><br></pre></td></tr></table></figure></p>
-<h4 id="打开Git-Shell-安装Hexo"><a href="#打开Git-Shell-安装Hexo" class="headerlink" title="打开Git Shell,安装Hexo"></a>打开Git Shell,安装Hexo</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">npm install hexo --save</span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果命令无法运行，可以尝试更换taobao的npm源</span></span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-<h4 id="Hexo初始化配置"><a href="#Hexo初始化配置" class="headerlink" title="Hexo初始化配置"></a>Hexo初始化配置</h4><p>新建一个目录，用于本地存放博客<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">mkdir desktop/zzhifeng.github.io</span><br><span class="line"><span class="built_in">cd</span> zzhifeng.github.io</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用hexo命令在目录下初始化环境</span></span><br><span class="line">hexo init</span><br><span class="line">npm install</span><br><span class="line"></span><br><span class="line">这个时候Hexo已经为我们生成了一个名为HelloWorld的一篇博客</span><br></pre></td></tr></table></figure></p>
-<h4 id="安装Hexo插件"><a href="#安装Hexo插件" class="headerlink" title="安装Hexo插件"></a>安装Hexo插件</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-generator-index --save</span><br><span class="line">npm install hexo-generator-archive --save</span><br><span class="line">npm install hexo-generator-category --save</span><br><span class="line">npm install hexo-generator-tag --save</span><br><span class="line">npm install hexo-server --save</span><br><span class="line">npm install hexo-deployer-git --save</span><br><span class="line">npm install hexo-deployer-heroku --save</span><br><span class="line">npm install hexo-deployer-rsync --save</span><br><span class="line">npm install hexo-deployer-openshift --save</span><br><span class="line">npm install hexo-renderer-marked@0.2 --save</span><br><span class="line">npm install hexo-renderer-stylus@0.2 --save</span><br><span class="line">npm install hexo-generator-feed@1 --save</span><br><span class="line">npm install hexo-generator-sitemap@1 --save</span><br></pre></td></tr></table></figure>
-<h4 id="生成静态文件"><a href="#生成静态文件" class="headerlink" title="生成静态文件"></a>生成静态文件</h4><p>使用命令将我们编写的markdown文件转换成html文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br></pre></td></tr></table></figure></p>
-<h4 id="开启本地服务-本地查看效果"><a href="#开启本地服务-本地查看效果" class="headerlink" title="开启本地服务, 本地查看效果"></a>开启本地服务, 本地查看效果</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-<p>使用<a href="http://localhost:4000" target="_blank" rel="external">http://localhost:4000</a> 就可以访问了</p>
-<h4 id="创建新的博客"><a href="#创建新的博客" class="headerlink" title="创建新的博客"></a>创建新的博客</h4><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">hexo new firstblog</span><br><span class="line"><span class="built_in">cd</span> <span class="built_in">source</span>/_posts</span><br><span class="line"><span class="comment"># 直接编辑对应的md文件即可</span></span><br></pre></td></tr></table></figure>
-<p>在线cmd Markdown: <a href="https://www.zybuluo.com/mdeditor" target="_blank" rel="external">https://www.zybuluo.com/mdeditor</a></p>
-<h4 id="更改博客主题"><a href="#更改博客主题" class="headerlink" title="更改博客主题"></a>更改博客主题</h4><ul>
-<li>_config.yml文件整个博客的配置文件,</li>
-<li>source/_posts文件夹包含了当前整个博客的所有文章</li>
-<li>themes 文件夹包含了当前的主题文件.</li>
-</ul>
-<p>在主目录中，clone主题的代码<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">npm install --save hexo-renderer-jade hexo-generator-feed hexo-generator-sitemap hexo-browsersync hexo-generator-archive</span><br><span class="line">git <span class="built_in">clone</span> https://github.com/pinggod/hexo-theme-apollo.git themes/apollo</span><br></pre></td></tr></table></figure></p>
-<p>更改_config.yml文件，在最后加入主题语句<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">theme: apollo</span><br><span class="line"></span><br><span class="line"><span class="comment"># 在归档页面显示所有文章</span></span><br><span class="line"><span class="comment"># 需要上面安装的 hexo-generator-archive 插件支持</span></span><br><span class="line">archive_generator:</span><br><span class="line">    per_page: 0</span><br><span class="line">    yearly: <span class="literal">false</span></span><br><span class="line">    monthly: <span class="literal">false</span></span><br><span class="line">    daily: <span class="literal">false</span></span><br></pre></td></tr></table></figure></p>
-<p>进入主题目录，编辑主题配置文件<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> themes/apollo</span><br><span class="line">vim _config.ym</span><br></pre></td></tr></table></figure></p>
-<p>生成静态文件，在本地预览<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo generate</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure></p>
-<p>更多主题: <a href="https://hexo.io/themes/" target="_blank" rel="external">https://hexo.io/themes/</a></p>
-<h4 id="将博客部署到github-pages中"><a href="#将博客部署到github-pages中" class="headerlink" title="将博客部署到github pages中"></a>将博客部署到github pages中</h4><p>在博客配置文件_config.yml中,有个deployment一节,在这边我们进行github pages 的配置<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: http://hexo.io/docs/deployment.html</span></span><br><span class="line">deploy:</span><br><span class="line">  <span class="built_in">type</span>: git <span class="comment">#注意,这边是git不是github,hexo 3.0以后就要求使用git,不然会出现deploy失败情况.</span></span><br><span class="line">  repo: https://github.com/zzhifeng/zzhifeng.github.io</span><br><span class="line">  branch: master</span><br></pre></td></tr></table></figure></p>
-<p>配置好了之后,就可以吧我们博客deploy到github 上啦.<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo generate</span><br><span class="line">hexo server  <span class="comment">#本地查看下，可不操作</span></span><br><span class="line">hexo deploy</span><br></pre></td></tr></table></figure></p>
-<h1 id="使用七牛存储"><a href="#使用七牛存储" class="headerlink" title="使用七牛存储"></a>使用七牛存储</h1><p>考虑到博客的速度，同时也为了便于博客的迁移。<br>免费用户有每月10GB流量+总空间10GB+PUT/DELETE 10万次请求+GET 100万次请求，这对个人博客来说足够，不够的话点这个活动页面，也可通过邀请好友获得奖励，。有一点要说明的是，七牛没有目录的概念，但是文件名可以包含/，比如2013/11/27/reading/photos-0.jpg，参考这里关于key-value存储系统。</p>
-<p><a href="http://www.qiniu.com/" target="_blank" rel="external">http://www.qiniu.com/</a></p>
-<p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/wuda.jpg" alt="测试图片"></p>
-<h1 id="绑定自己的域名"><a href="#绑定自己的域名" class="headerlink" title="绑定自己的域名"></a>绑定自己的域名</h1><h4 id="域名和DNS"><a href="#域名和DNS" class="headerlink" title="域名和DNS"></a>域名和DNS</h4><ul>
-<li>www.Godaddy.com</li>
-</ul>
-<h4 id="DNS-Server"><a href="#DNS-Server" class="headerlink" title="DNS Server"></a>DNS Server</h4><ul>
-<li>www.dnspod.com</li>
-</ul>
-<h4 id="设置cname"><a href="#设置cname" class="headerlink" title="设置cname"></a>设置cname</h4><ol>
-<li>在github网站的目录下创建CNAME文件，填写自己的域名 如xxx.com, 保存结束</li>
-<li>登陆DNSPod, 先添加域名，再添加记录，设置如下:<br>@   CNMAE zzhifeng.github.io<br>www  CNAME zzhifeng.github.io</li>
-</ol>
-<p>结束.</p>
-
-          
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/06/01/hexo-github-blog/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
@@ -666,18 +620,14 @@
 
       
         
-          
-            <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-          
+          <p><img src="http://7xv3xy.com1.z0.glb.clouddn.com/helloworld.gif" alt="hello-world"></p>
+<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2>
+          <div class="post-more-link text-center">
+            <a class="btn" href="/2016/04/03/hello-world/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
         
       
     </div>
