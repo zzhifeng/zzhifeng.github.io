@@ -99,7 +99,7 @@
 
 优点: 代码开发, 测试, 部署 更快, docker image做到了一致性的保障">
 <meta property="og:image" content="http://7xv3xy.com1.z0.glb.clouddn.com/jenkins-docker.jpg">
-<meta property="og:updated_time" content="2016-06-08T07:30:09.282Z">
+<meta property="og:updated_time" content="2016-06-08T07:34:02.209Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="基于Docker的持续化集成与部署">
 <meta name="twitter:description" content="实验原理
@@ -326,7 +326,7 @@
 <p>修改gitlab.rb<br><figure class="highlight bash"><table><tr><td class="code"><pre><span class="line"><span class="comment"># docker exec -it gitlab /bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># vim /etc/gitlab/gitlab.rb</span></span><br><span class="line">      external_url <span class="string">"http://gitlab.example.com:9080"</span>     // 这句有问题，加上了web就不能访问了</span><br><span class="line">      gitlab_rails[‘gitlab_shell_ssh_port’] = 9022</span><br><span class="line"></span><br><span class="line"><span class="comment"># docker exec gitlab update-permissions</span></span><br><span class="line"><span class="comment"># docker restart gitlab     // 修改完后需要重启容器才能生效</span></span><br></pre></td></tr></table></figure></p>
 <p>访问gitlab的URL:</p>
 <p><a href="http://192.111.141.242:9080" target="_blank" rel="external">http://192.111.141.242:9080</a><br>username: <code>root</code><br>password: <code>5iveL!fe</code>       </p>
-<p>在gitlab里新建一个project, 名为 docker-ci, 然后会生成一个git的访问地址，记住这个信息后面配置jenkins要用到.<br><a href="http://9.111.141.242:9080/root/docker-ci.git" target="_blank" rel="external">http://9.111.141.242:9080/root/docker-ci.git</a></p>
+<p>在gitlab里新建一个project, 名为 docker-ci, 然后会生成一个git的访问地址，记住这个信息后面配置jenkins要用到.<br><a href="http://192.111.141.242:9080/root/docker-ci.git" target="_blank" rel="external">http://192.111.141.242:9080/root/docker-ci.git</a></p>
 <hr>
 <blockquote>
 <h4 id="安装Jenkins"><a href="#安装Jenkins" class="headerlink" title="安装Jenkins"></a>安装Jenkins</h4></blockquote>
