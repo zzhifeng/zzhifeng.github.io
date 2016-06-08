@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://zzhifeng.github.io/2016/04/03/hello-world/</loc>
+    
+    <lastmod>2016-06-08T09:47:22.840Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://zzhifeng.github.io/2016/06/01/hexo-github-blog/</loc>
     
     <lastmod>2016-06-08T09:40:34.123Z</lastmod>
@@ -19,13 +26,6 @@
     <loc>http://zzhifeng.github.io/2016/06/07/harbor-install/</loc>
     
     <lastmod>2016-06-07T10:16:36.650Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://zzhifeng.github.io/2016/04/03/hello-world/</loc>
-    
-    <lastmod>2016-06-07T06:31:55.609Z</lastmod>
     
   </url>
   
